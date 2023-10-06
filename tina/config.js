@@ -14,8 +14,8 @@ export default defineConfig({
   },
   media: {
     tina: {
-      mediaRoot: "",
-      publicFolder: "/img/",
+      mediaRoot: "/img/",
+      publicFolder: "",
     },
   },
   schema: {
@@ -23,7 +23,7 @@ export default defineConfig({
       {
         name: "post",
         label: "Posts",
-        path: "_posts",
+        path: "_posts/",
         fields: [
           {
             type: "string",
@@ -33,11 +33,18 @@ export default defineConfig({
             required: true,
           },
           {
+            type: "image",
+            name: "background",
+            label: "Freatured Image",
+
+          },
+          {
             type: "rich-text",
             name: "body",
             label: "Body",
             isBody: true,
           },
+          
         ],
       },
     ],
